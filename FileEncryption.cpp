@@ -1,5 +1,6 @@
 ﻿#define _CRT_SECURE_NO_DEPRECATE
 #include <stdio.h>
+#include <stdlib.h> 
 #include <io.h>
 
 #define FilePathLength 1024
@@ -127,9 +128,10 @@ int main()
     scanf("%s", key);
     printf("请输入模式(0:加密 1：解密):");
     scanf("%d", &mode);
-    switch (start(file_path, key, 1)) {
-        case 0:printf("成功"); break;
-        case 1:printf("失败"); break;
+    switch (start(file_path, key, mode)) {
+        case 0:printf("100%% [完成]\n"); break;
+        case 1:printf("失败!\n"); break;
     }
+    system("pause");
     return 0;
 }
